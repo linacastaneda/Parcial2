@@ -2,9 +2,8 @@
 
 ## 1. Introducción
 
-Este proyecto tiene como objetivo diseñar e implementar diferentes técnicas de análisis sintáctico, incluyendo el uso de ANTLR, parsers LL(1), el algoritmo CYK y un parser descendente recursivo.
+Se desarrollan los 5 puntos del parcial de segundo corte
 
-Se desarrollan cinco puntos principales que abarcan desde el diseño de gramáticas hasta la comparación de algoritmos de parsing.
 
 ---
 
@@ -51,7 +50,6 @@ Además, se visualizó el árbol usando Graphviz.
 
 ## 4. Punto 3: Ambigüedad en if-then-else
 
-Se analizó la ambigüedad del problema clásico del `dangling else`.
 
 Se demostró que la gramática original es ambigua mediante:
 

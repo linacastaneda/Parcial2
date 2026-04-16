@@ -1,7 +1,13 @@
+"""Parser CYK simple para lenguajes en forma normal de Chomsky.
+
+Incluye definicion de la gramatica, tokenizacion y funcion principal
+para evaluar si una expresion pertenece al lenguaje.
+"""
+
 import time
 import tracemalloc
 
-# ── Gramática en FNC ─────────────────────────────────────────────
+# ── Gramatica en FNC ─────────────────────────────────────────────
 # Producciones binarias: A -> B C
 BINARIAS = {
     ('E',  'PLUS', 'T')    : 'E',
@@ -53,7 +59,7 @@ def tokenizar(expresion: str):
     return tokens
 
 def terminal_a_no_terminales(token_tipo):
-    """Retorna qué no-terminales pueden generar este terminal."""
+    """Retorna que no terminales pueden generar este terminal."""
     mapa = {
         'num'   : ['F'],
         'PLUS'  : ['PLUS'],
@@ -64,12 +70,13 @@ def terminal_a_no_terminales(token_tipo):
     return mapa.get(token_tipo, [])
 
 def cyk(expresion: str):
+    """Aplica el algoritmo CYK para verificar la pertenencia a la gramatica."""
     tokens = tokenizar(expresion)
     n = len(tokens)
     if n == 0:
         return False
 
-    # tabla[i][j] = conjunto de no-terminales que generan tokens[i..j]
+    # tabla[i][j] = conjunto de no terminales que generan tokens[i..j]
     tabla = [[set() for _ in range(n)] for _ in range(n)]
 
     # Paso 1: inicializar diagonal (longitud 1)
@@ -105,6 +112,7 @@ def cyk(expresion: str):
     return 'E' in tabla[0][n-1]
 
 def parsear_cyk(expresion: str):
+    """Mide tiempo y memoria usados al ejecutar el parser CYK."""
     tracemalloc.start()
     t0 = time.perf_counter()
 

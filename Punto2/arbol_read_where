@@ -1,0 +1,52 @@
+// Árbol sintáctico
+digraph {
+	0 [label=programa]
+	1 [label=sentencia]
+	0 -> 1
+	2 [label=read]
+	1 -> 2
+	3 [label=READ]
+	2 -> 3
+	4 [label=identificador]
+	2 -> 4
+	5 [label=usuarios]
+	4 -> 5
+	6 [label=whereOpcional]
+	2 -> 6
+	7 [label=WHERE]
+	6 -> 7
+	8 [label=condicion]
+	6 -> 8
+	9 [label=condicion]
+	8 -> 9
+	10 [label=identificador]
+	9 -> 10
+	11 [label=edad]
+	10 -> 11
+	12 [label=operador]
+	9 -> 12
+	13 [label=">"]
+	12 -> 13
+	14 [label=valor]
+	9 -> 14
+	15 [label=18]
+	14 -> 15
+	16 [label=AND]
+	8 -> 16
+	17 [label=condicion]
+	8 -> 17
+	18 [label=identificador]
+	17 -> 18
+	19 [label=activo]
+	18 -> 19
+	20 [label=operador]
+	17 -> 20
+	21 [label="="]
+	20 -> 21
+	22 [label=valor]
+	17 -> 22
+	23 [label=true]
+	22 -> 23
+	24 [label=<EOF>]
+	0 -> 24
+}

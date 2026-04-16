@@ -1,0 +1,20 @@
+// Else con if interno
+digraph {
+	A [label=if]
+	B [label="cond: e1"]
+	C [label=then]
+	D [label="if-else"]
+	E [label="cond: e2"]
+	F [label=then]
+	G [label=otras]
+	H [label=else]
+	I [label=otras]
+	A -> B
+	A -> C
+	C -> D
+	D -> E
+	D -> F
+	F -> G
+	D -> H
+	H -> I
+}
